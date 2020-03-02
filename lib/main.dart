@@ -106,7 +106,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   padding: EdgeInsets.all(2.0),
                   child: Text(
                     "$_contadorA",
-                    style: TextStyle(fontSize: 140.0, color: Colors.white),
+                    style: TextStyle(fontSize: 100.0, color: Colors.white),
                   ),
                 ),
                 Padding(
@@ -124,7 +124,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   padding: EdgeInsets.all(2.0),
                   child: Text(
                     "$_contadorB",
-                    style: TextStyle(fontSize: 140.0, color: Colors.white),
+                    style: TextStyle(fontSize: 100.0, color: Colors.white),
                   ),
                 ),
               ],
