@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.Dart';
 
 void main() {
   //no "runApp é necessário passar um Widget que no caso esta sendo
@@ -46,6 +47,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeRight,
+      DeviceOrientation.landscapeLeft,
+  ]);
     _controller = AnimationController(vsync: this);
   }
 
@@ -106,7 +111,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   padding: EdgeInsets.all(2.0),
                   child: Text(
                     "$_contadorA",
-                    style: TextStyle(fontSize: 100.0, color: Colors.white),
+                    style: TextStyle(fontSize: 140.0, color: Colors.white),
                   ),
                 ),
                 Padding(
@@ -124,7 +129,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   padding: EdgeInsets.all(2.0),
                   child: Text(
                     "$_contadorB",
-                    style: TextStyle(fontSize: 100.0, color: Colors.white),
+                    style: TextStyle(fontSize: 140.0, color: Colors.white),
                   ),
                 ),
               ],
