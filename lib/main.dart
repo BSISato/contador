@@ -24,10 +24,14 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     setState(() {
       _contadorA += comando;
       if (_contadorA == -1) {
-        //ORIENTADA A GAMBIARRA
         _contadorA = 0;
+      //FIM DO JOGO TIME A GANHA
       } else if (_contadorA >= 10 && _contadorB <= _contadorA - 2) {
         showAlertDialogA(context);
+        _contadorA = 0;
+        _contadorB = 0;
+      } else if (_contadorB >= 10 && _contadorA <= _contadorB - 2) {
+        showAlertDialogB(context);
         _contadorA = 0;
         _contadorB = 0;
       }
@@ -38,10 +42,14 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     setState(() {
       _contadorB += comando;
       if (_contadorB == -1) {
-        //ORIENTADA A GAMBIARRA
         _contadorB = 0;
+      //FIM DO JOGO TIME B GANHA
       } else if (_contadorB >= 10 && _contadorA <= _contadorB - 2) {
         showAlertDialogB(context);
+        _contadorA = 0;
+        _contadorB = 0;
+      }else if (_contadorA >= 10 && _contadorB <= _contadorA - 2) {
+        showAlertDialogA(context);
         _contadorA = 0;
         _contadorB = 0;
       }
@@ -239,9 +247,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     );
   }
 }
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
 
+//*********SEGUNDA TELA************/
 class Segunda extends StatefulWidget {
   @override
   _Segunda createState() => _Segunda();
@@ -303,7 +310,6 @@ class _Segunda extends State<Segunda> with SingleTickerProviderStateMixin {
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
             Align(
-              //alignment: Alignment.bottomCenter,
               child: FloatingActionButton(
                 child: Text(
                   "<<<",
